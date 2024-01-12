@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="QuelMedecin.BO.Adresse">
+    <Position X="9" Y="0.75" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAQQDAAEAAwAAAAAIEAAACBAAI=</HashCode>
+      <FileName>Adresse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuelMedecin.BO.Medecin">
+    <Position X="1.5" Y="0.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAACQAQAAAAAAAAAAAAAYAAAACAAIAIAACAAAAAAAEA=</HashCode>
+      <FileName>Medecin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuelMedecin.BO.Patient">
+    <Position X="1.5" Y="5.5" Width="9.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAQEAAAQIAAAAGgAYAAEACAQIAIAECAAAAAAAAA=</HashCode>
+      <FileName>Patient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

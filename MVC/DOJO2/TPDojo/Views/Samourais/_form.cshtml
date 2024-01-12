@@ -1,0 +1,24 @@
+﻿@model TPDojo.Models.SamouraiVM
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+    <label asp-for="Samourai.Nom" class="control-label"></label>
+    <input asp-for="Samourai.Nom" class="form-control" />
+    <span asp-validation-for="Samourai.Nom" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Samourai.Force" class="control-label"></label>
+    <input asp-for="Samourai.Force" class="form-control" />
+    <span asp-validation-for="Samourai.Force" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Samourai.ArmeId" class="control-label"></label>
+    <select asp-for="Samourai.ArmeId" class ="form-control" asp-items="Model.ChoixArme">
+        <option value="">aucune arme</option>
+    </select>
+</div>
+<div class="form-group">
+    <label asp-for="IdsArtsMartiaux" class="control-label"></label>
+    <select asp-for="IdsArtsMartiaux" class ="form-control" asp-items="Model.ChoixArtsMartiaux">
+    </select>
+</div>

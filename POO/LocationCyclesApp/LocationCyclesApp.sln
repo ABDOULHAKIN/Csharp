@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationCyclesApp", "LocationCyclesApp\LocationCyclesApp.csproj", "{69156946-5488-453C-9716-37476B94BBF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BO", "BO\BO.csproj", "{99AD7BDF-370C-4B14-89C7-5495D6EA4882}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69156946-5488-453C-9716-37476B94BBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69156946-5488-453C-9716-37476B94BBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69156946-5488-453C-9716-37476B94BBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69156946-5488-453C-9716-37476B94BBF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99AD7BDF-370C-4B14-89C7-5495D6EA4882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99AD7BDF-370C-4B14-89C7-5495D6EA4882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99AD7BDF-370C-4B14-89C7-5495D6EA4882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99AD7BDF-370C-4B14-89C7-5495D6EA4882}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {595A484A-6099-4F4D-8030-E80F773B733E}
+	EndGlobalSection
+EndGlobal

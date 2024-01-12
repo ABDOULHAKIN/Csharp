@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* Bonjour je suis un commentaire en razor *@
+
+@{
+    int i = 1337;
+    var mots = new List<string>() { "coucou", "Loufga", "Boom", "Tox" };
+}
+@foreach (var mot in mots)
+{
+    <p>@mot</p>
+}
+<p>Valeur de la variable : @i</p>
+
+@if (i == 5 ){
+    <p>Elle vaut 5 </p>
+}
+else
+{
+    <p>Elle ne vaut pas 5</p>
+}
+
+@for (int x = 0; x < 7; x++)
+{
+    <p>Bonjour @(x) !</p>
+}
+<p> Affichage du message du TempData : @TempData["Message"]</p>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

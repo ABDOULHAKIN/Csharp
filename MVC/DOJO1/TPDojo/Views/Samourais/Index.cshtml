@@ -1,0 +1,82 @@
+﻿@model TPDojo.Pagination.PaginatedList<BO.Samourai>
+@*@model PagedList.IPagedList<BO.Samourai>*@
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div role="search">
+    <form asp-action="Index" method="get">
+        <input type="search" name="recherche" value="@ViewBag.Recherche" />
+        <input type="submit" value="Rechercher" />
+    </form>
+    @if(!String.IsNullOrEmpty(ViewBag.Recherche)) {
+        <a asp-action="Index" asp-route-recherche="">Retirer le filtre</a>
+    }
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-tri="@ViewBag.OrdreTri" asp-route-filtre="@ViewBag.Recherche">Nom</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-tri="@ViewBag.OrdreTriForce" asp-route-filtre="@ViewBag.Recherche">Force</a>
+            </th>
+            <th>
+                Arme
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Force)
+            </td>
+            <td>
+                @if(item.Arme != null) {
+                    @item.Arme.Nom
+                } else {
+                    <i>[aucune arme]</i>
+                }
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+Page @Model.NumPage / @Model.NbPages
+@{
+    var prevDisabled = !Model.APrecedent ? "disabled" : "";
+    var nextDisabled = !Model.ASuivant ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-tri="@ViewData["OrdreTriActuel"]"
+   asp-route-page="@(Model.NumPage - 1)"
+   asp-route-filtre="@ViewData["Recherche"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-tri="@ViewData["OrdreTriActuel"]"
+   asp-route-page="@(Model.NumPage + 1)"
+   asp-route-filtre="@ViewData["Recherche"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>

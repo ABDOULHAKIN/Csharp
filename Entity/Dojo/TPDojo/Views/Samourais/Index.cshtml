@@ -1,0 +1,71 @@
+﻿@model IEnumerable<BO.Samourai>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Force)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Arme)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArtsMartiaux)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Potentiel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Force)
+                </td>
+                <td>
+                    @if (item.Arme == null) {
+                        <i>aucune arme</i>
+                    } else {
+                        @Html.DisplayFor(modelItem => item.Arme.Nom)
+                    }
+                </td>
+                <td>
+                    @if (!item.ArtsMartiaux.Any()) {
+                        <i>aucun art martial pratiqué</i>
+                    } else {
+                        <ul>
+                            @foreach (var a in item.ArtsMartiaux) {
+                                <li>@a.Nom</li>
+                            }
+                        </ul>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Potentiel)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

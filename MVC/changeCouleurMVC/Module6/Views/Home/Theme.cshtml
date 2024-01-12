@@ -1,0 +1,14 @@
+﻿@model IDictionary<string, string>
+
+@{ViewData["Title"] = "Thème"; }
+
+<h1>@ViewData["Title"]</h1>
+<form asp-controller="Home" asp-action="Theme" method="post">
+    <label for="couleur">Choisissez votre thème</label>
+    <select name="couleur" id="couleur">
+        @foreach(var clef in @Model.Keys) {
+            <option value="@clef">@Model[@clef]</option>
+        }
+    </select>
+    <input type="submit" value="Sauvegarder" />
+</form>
